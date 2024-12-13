@@ -5,9 +5,13 @@ const Form: React.FC = () => {
   const {
     idNumber,
     receipt,
+    totalvalue,
     packageImage,
     status,
-    bankAccountInfo,
+    bankAccountInfo1,
+    bankAccountInfo2,
+    bankAccountInfo3,
+    bankAccountInfo4,
     notes,
     setField,
   } = useFormStore();
@@ -17,8 +21,12 @@ const Form: React.FC = () => {
     console.log({
       idNumber,
       receipt,
+      totalvalue,
       status,
-      bankAccountInfo,
+      bankAccountInfo1,
+      bankAccountInfo2,
+      bankAccountInfo3,
+      bankAccountInfo4,
       notes,
     });
   };
@@ -27,7 +35,7 @@ const Form: React.FC = () => {
     <form onSubmit={handleSubmit}>
     <div className="formfields">
       <div>
-        <label>ID Number</label>
+        <label>Deliverback order number (check your confirmation email to find it)</label>
         <input
           type="text"
           value={idNumber}
@@ -37,9 +45,9 @@ const Form: React.FC = () => {
       <div>
         <label>Receipt</label>
         <input
-          type="text"
-          value={receipt}
-          onChange={(e) => setField('receipt', e.target.value)}
+          type="file"
+          accept="image/*"
+          onChange={(e) => setField('receipt', e.target.files?.[0] || null)}
         />
       </div>
       <div>
@@ -49,6 +57,14 @@ const Form: React.FC = () => {
           accept="image/*"
           onChange={(e) => setField('packageImage', e.target.files?.[0] || null)}
         />
+      </div>
+      <div>
+        <label>Total item(s) value when bought</label>
+        <input
+          type="number"
+          value={totalvalue}
+          onChange={(e) => setField('totalvalue', e.target.value)}
+          />
       </div>
       <div>
         <label>Status</label>
@@ -64,15 +80,37 @@ const Form: React.FC = () => {
       </div>
       <div>
         <label>Bank Account Info</label>
-        <input
+        <input placeholder="BIC"
           type="text"
-          value={bankAccountInfo}
-          onChange={(e) => setField('bankAccountInfo', e.target.value)}
+          value={bankAccountInfo1}
+          onChange={(e) => setField('bankAccountInfo1', e.target.value)}
         />
       </div>
+      <div className="Bankinfofield">
+       <input placeholder="IBAN"
+          type="text"
+          value={bankAccountInfo2}
+          onChange={(e) => setField('bankAccountInfo2', e.target.value)}
+        />
+      </div>
+      <div className="Bankinfofield"> 
+       <input  placeholder="Bank Name"
+          type="text"
+          value={bankAccountInfo3}
+          onChange={(e) => setField('bankAccountInfo3', e.target.value)}
+        />
+      </div>
+        <div className="Bankinfofield"> 
+       <input  placeholder="Bank Country"
+          type="text"
+          value={bankAccountInfo4}
+          onChange={(e) => setField('bankAccountInfo4', e.target.value)}
+        />
+      </div>
+
       <div>
         <label>Notes/Comments</label>
-        <textarea
+        <textarea 
           value={notes}
           onChange={(e) => setField('notes', e.target.value)}
         />
