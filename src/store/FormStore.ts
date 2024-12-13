@@ -1,4 +1,5 @@
-import create from 'zustand';
+// src/store/FormStore.ts
+import { create } from 'zustand';
 
 type FormState = {
   idNumber: string;
@@ -7,7 +8,7 @@ type FormState = {
   status: string;
   bankAccountInfo: string;
   notes: string;
-  setField: (field: keyof FormState, value: any) => void;
+  setField: (field: keyof FormState, value: string | File | null) => void;
 };
 
 export const useFormStore = create<FormState>((set) => ({

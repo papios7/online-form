@@ -1,5 +1,5 @@
 import React, { FormEvent } from 'react';
-import { useFormStore } from './FormStore';
+import { useFormStore } from '../store/FormStore.ts';
 
 const Form: React.FC = () => {
   const {
@@ -25,8 +25,9 @@ const Form: React.FC = () => {
 
   return (
     <form onSubmit={handleSubmit}>
+    <div className="formfields">
       <div>
-        <label>ID Number:</label>
+        <label>ID Number</label>
         <input
           type="text"
           value={idNumber}
@@ -34,7 +35,7 @@ const Form: React.FC = () => {
         />
       </div>
       <div>
-        <label>Receipt:</label>
+        <label>Receipt</label>
         <input
           type="text"
           value={receipt}
@@ -42,7 +43,7 @@ const Form: React.FC = () => {
         />
       </div>
       <div>
-        <label>Package Image:</label>
+        <label>Package Image</label>
         <input
           type="file"
           accept="image/*"
@@ -50,8 +51,8 @@ const Form: React.FC = () => {
         />
       </div>
       <div>
-        <label>Status:</label>
-        <select
+        <label>Status</label>
+        <select className="arrowselect"
           value={status}
           onChange={(e) => setField('status', e.target.value)}
         >
@@ -62,7 +63,7 @@ const Form: React.FC = () => {
         </select>
       </div>
       <div>
-        <label>Bank Account Info:</label>
+        <label>Bank Account Info</label>
         <input
           type="text"
           value={bankAccountInfo}
@@ -70,14 +71,16 @@ const Form: React.FC = () => {
         />
       </div>
       <div>
-        <label>Notes/Comments:</label>
+        <label>Notes/Comments</label>
         <textarea
           value={notes}
           onChange={(e) => setField('notes', e.target.value)}
         />
       </div>
       <button type="submit">Submit</button>
+      </div>
     </form>
+
   );
 };
 

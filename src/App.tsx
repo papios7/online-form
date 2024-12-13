@@ -1,26 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Form from './components/Form.tsx';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+
+ 
+    <header>
+    <div className="header">      
+      <img src="https://claims.deliverback.com/logo-horizontal.png"></img>
     </div>
+    <div className="mainpage">
+      <h1>Online Form</h1>
+      <h5>Fill in the form bellow following the steps provided, and we will do our best to find and return the item to its owner!</h5>
+      <Form />
+    </div></header>
   );
-}
+};
 
 export default App;
