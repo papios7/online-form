@@ -63,21 +63,21 @@ code {
 
 .formfields label{
   letter-spacing: -0.05px;
-    line-height: 1.4375em;  
-    font-weight: 400;
-    position: relative;
-    display: block;
-    text-align: left;
-    text-overflow: ellipsis;
-    max-width: 100%;
-    font-size: 12px;
-    color: rgb(153, 156, 169);
-    margin-left: 8px;
-    padding: 0px;
-    white-space: nowrap;
-    overflow: hidden;
-    padding-top:30px;
-    }
+  line-height: 1.4375em;
+  font-weight: 600;
+  position: relative;
+  display: block;
+  text-align: left;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  font-size: 16px;
+  color: rgb(40, 59, 78);
+  margin-left: 8px;
+  padding: 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-top:30px;
+}
 
 .formfields select{
   padding: 12px 16px;
@@ -158,4 +158,22 @@ button{
 
 .Bankinfofield{
   padding-top:5px;
+}
+
+span.subtitle  {
+  text-align:left;
+  font-size:12px; 
+  display: block;
+  letter-spacing: -0.1px;
+  padding-left:8px;
+  color:#999ca9;
+  line-height: 30px;
+}
+
+.alert img{
+  width:5%;
+}
+
+.alert{
+  margin-top:25%;
 }
